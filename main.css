@@ -54,6 +54,10 @@
     --oxford-blue-grad: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(18,19,38,1) 70%, rgba(23,18,38,1) 100%);
 }
 
+body {
+    overflow-x: hidden;
+}
+
 
 /** Navbar **/
 
