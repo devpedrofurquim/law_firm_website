@@ -1,7 +1,7 @@
 # Website for a real Law Firm
 *Developed with Html, Css, Javascript and Bootstrap*
 
-## Project Screenshots
+## Project Views
 
 ![](imgs/Screenshot-1.png)
 
