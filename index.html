@@ -18,6 +18,8 @@
    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <!-- Preload Images -->
     <link rel="preolad" href="imgs/">
+    <!-- Email JS Scripts -->
+  
   </head>
   <body>
 
@@ -59,14 +61,13 @@
                 </li>
               </ul>
               <ul class="nav d-md-none my-5 list-unstyled d-block text-center" style="font-size: 1.10rem;">
-                <li class="mb-3" ><a href="mailto:info@email.com" class="contact-link" id="contact-link-email">info@email.com</a></li>
-                <li><a href="tel:+551500000000" class="contact-link" id="contact-link-phone">+55150000-0000</a></li>
+                <li class="mb-3" ><a href="mailto:eliane@elianefurquim.adv.br " class="contact-link" id="contact-link-email">eliane@elianefurquim.adv.br</a></li>
+                <li><a href="tel:+5515981871191" class="contact-link" id="contact-link-phone">+5515981871191</a></li>
               </ul>
               <ul class="nav d-md-none my-4 justify-content-center list-unstyled d-flex" style="font-size: 1.10rem;">
-                <li class="nav-item ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram"></i></a></li>
-                <li class="nav-item ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook"></i></a></li>
-                <li class="nav-item ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-whatsapp"></i></a></li>
-                <li class="nav-item ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-envelope"></i></a></li>
+                <li class="nav-item ms-3"><a class="text-body-secondary" href="https://www.instagram.com/elianefurquimadvogada/"><i class="bi bi-instagram"></i></a></li>
+                <li class="nav-item ms-3"><a class="text-body-secondary" href="https://api.whatsapp.com/send?phone=5515981871191&text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20consulta."><i class="bi bi-whatsapp"></i></a></li>
+                <li class="nav-item ms-3"><a class="text-body-secondary" href="mailto:eliane@elianefurquim.adv.br"><i class="bi bi-envelope"></i></a></li>
               </ul>
             </div>
           </div>
@@ -139,33 +140,34 @@
             <h1 class="modal-title fs-5" id="staticBackdropLiveLabel">Agendar Consulta</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
+          <form id="contact-form">
+          <input type="hidden" name="contact_number">
           <div class="modal-body">
-            <form id="contato__form">
               <p class="form-text">Confirmaremos o agendamento em breve</p>
               <div id="liveAlertPlaceholder"></div>
               <div class="row">
                 <div class="col-12">
                   <div class="mb-3">
                     <label for="InputName" class="form-label">Nome completo</label>
-                    <input type="text" class="form-control" id="InputName">
+                    <input type="text" name="client_name" class="form-control" id="client_name">
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Endereço de e-mail</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" name="client_email" class="form-control" id="client_email" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="mb-3">
                     <label for="exampleInputCel" class="form-label">Nº de Celular</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="number" name="client_phone" class="form-control" id="client_phone" aria-describedby="emailHelp">
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="mb-3">
                     <label for="InputDate" class="form-label">Data da consulta</label>
-                    <input type="date" class="form-control" id="InputDate">
+                    <input type="date" name="date" class="form-control" id="date">
                   </div>
                 </div>
                 <div class="col-12">
@@ -192,11 +194,11 @@
                   </div>
                 </div>                
               </div>
-            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary" id="liveAlertBtn">Enviar</button>
+            <button type="submit" value="Send" class="btn btn-primary" id="liveAlertBtn">Enviar</button>
+          </form>
           </div>
         </div>
       </div>
@@ -541,9 +543,32 @@
     </div>
     
 <!-- Whatsapp Icon -->
-    <a data-bs-toggle="tooltip" data-bs-title="Agende sua consulta! Estamos Online!" href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+    <a data-bs-toggle="tooltip" data-bs-title="Agende sua consulta! Estamos Online!" href="https://api.whatsapp.com/send?phone=5515981871191&text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20consulta." class="float" target="_blank">
       <i class="fa bi bi-whatsapp my-float"></i>
     </a>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('wNTcs_labPMW2k3ZF');
+        })();
+
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('sendgrid.net', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <!-- End Email JS Script -->
 
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
