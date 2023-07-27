@@ -237,7 +237,7 @@
                     <img src="imgs/furquim-icon.svg" alt="Furquim Advocacia logo" class="rounded-circle" width="32" height="32">
                   </li>
                   <li class="d-flex align-items-center text-center">
-                    <small><a href="#" type="button" class="btn text-white">Saiba Mais</a></small>
+                    <small><a href="penal.html" type="button" class="btn text-white">Saiba Mais</a></small>
                   </li>
                 </ul>
               </div>
@@ -254,7 +254,7 @@
                     <img src="imgs/furquim-icon.svg" alt="Furquim Advocacia logo" class="rounded-circle" width="32" height="32">
                   </li>
                   <li class="d-flex align-items-center text-center">
-                    <small><a href="#" type="button" class="btn text-white">Saiba Mais</a></small>
+                    <small><a href="trabalhista.html" type="button" class="btn text-white">Saiba Mais</a></small>
                   </li>
                 </ul>
               </div>
@@ -270,7 +270,7 @@
                     <img src="imgs/furquim-icon.svg" alt="Furquim Advocacia logo" class="rounded-circle" width="32" height="32">
                   </li>
                   <li class="d-flex align-items-center text-center">
-                    <small><a href="#" type="button" class="btn text-white">Saiba Mais</a></small>
+                    <small><a href="previdenciario.html" type="button" class="btn text-white">Saiba Mais</a></small>
                   </li>
                 </ul>
               </div>
@@ -287,7 +287,7 @@
                     <img src="imgs/furquim-icon.svg" alt="Furquim Advocacia logo" class="rounded-circle" width="32" height="32">
                   </li>
                   <li class="d-flex align-items-center text-center">
-                    <small><a href="#" type="button" class="btn text-white">Saiba Mais</a></small>
+                    <small><a href="empresarial.html" type="button" class="btn text-white">Saiba Mais</a></small>
                   </li>
                 </ul>
               </div>
@@ -304,7 +304,7 @@
                     <img src="imgs/furquim-icon.svg" alt="Furquim Advocacia logo" class="rounded-circle" width="32" height="32">
                   </li>
                   <li class="d-flex align-items-center text-center">
-                    <small><a href="#" type="button" class="btn text-white">Saiba Mais</a></small>
+                    <small><a href="usucapiao.html" type="button" class="btn text-white">Saiba Mais</a></small>
                   </li>
                 </ul>
               </div>
@@ -481,8 +481,8 @@
           <div class="row">
             <div class="col-12 fs-4">
               <div class="text-center d-flex justify-content-center align-items-center">
-                <a href="https://www.instagram.com/seu_instagram" target="_blank" class="nav-link px-2 text-body"><i class="bi bi-instagram"></i></a>
-                <a href="mailto:seuemail@gmail.com" class="nav-link px-2 text-body"><i class="bi bi-envelope-fill"></i></a>
+                <a href="https://www.instagram.com/elianefurquimadvogada/" target="_blank" class="nav-link px-2 text-body"><i class="bi bi-instagram"></i></a>
+                <a href="mailto:eliane@elianefurquim.adv.br" class="nav-link px-2 text-body"><i class="bi bi-envelope-fill"></i></a>
               </div>
             </div>
           </div>
@@ -562,8 +562,10 @@
                 emailjs.sendForm('sendgrid.net', 'contact_form', this)
                     .then(function() {
                         console.log('SUCCESS!');
+                        location.reload()
                     }, function(error) {
                         console.log('FAILED...', error);
+                        location.reload()
                     });
             });
         }

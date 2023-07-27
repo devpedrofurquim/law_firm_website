@@ -137,6 +137,11 @@ body {
     color: #fff;
    }
 
+
+   .consulta-btn:hover {
+    color: #fff !important;
+   }
+
    /** Advogados **/
 
    #advogados {
@@ -164,6 +169,13 @@ body {
     overflow: hidden;
   }
 
+  /* Civil.html */
+
+  .img-links {
+    border-radius: 52px;
+    flex: auto !important;
+  }
+
    /** Media Queries **/
 
 @media (min-width: 576px) { 
@@ -187,6 +199,4 @@ body {
 
 @media (min-width: 1400px) { 
 
-}
-
-   
+}  
